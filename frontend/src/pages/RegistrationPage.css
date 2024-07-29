@@ -1,0 +1,79 @@
+.registration-page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+      background-color: rgb(255, 255, 255);
+
+
+   
+
+}
+.form-container{
+    width: 500px;
+    /* height: 300px; */
+    border:none;
+    box-shadow: 5px 5px 10px 10px #dfdddd;
+    background-color: rgb(234, 235, 230);
+}
+.form-title {
+    display: inline-block;
+    width: 100%;
+    background-color: rgb(192, 128, 10) ;
+}
+.form-title h1{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.form-field{
+    width:100%;
+ 
+    display: flex;
+    justify-content: center;
+    
+}
+    
+.form-field .input-field-email, .input-field-password,.input-field-confirm-password{ 
+    
+padding: 10px 15px;
+width: 80%;
+margin-top: 20px;
+margin-bottom: 20px;
+border-radius: 5px;
+border: none;
+}
+
+.form-field .input-field-firstname, .input-field-lastname{ 
+    
+    padding: 10px 15px;
+    width: 40%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    }
+
+.form-button{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.form-button .register-button{
+    background-color: rgb(192, 128, 10) ;
+    border-radius: 15px;
+    border: none;
+    width: 30%;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+}
+.form-button .cancel-button{
+    background-color: rgb(136, 136, 136);
+    border-radius: 15px;
+    border: none;
+    width: 30%;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+}
