@@ -14,17 +14,19 @@ li.nav-bar-list-item {
 
 li.nav-bar-list-item a{
    display: block;
-   padding: 16px 24px;
+   padding: 24px 24px;
    color: white;;
 
 }
 
 li.nav-bar-list-item a.active{
-    background-color: rgb(113, 236, 13);
+    background-color: rgba(113, 236, 13,0.3);
 }
 
 li.nav-bar-list-item a:hover:not(.active){
     color: black;
+    background-color: rgba(113, 236, 13, 0.5);
+    
   
 }
 

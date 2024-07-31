@@ -6,14 +6,16 @@
 
     width:100vw;
     height:100vh;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
+    background-color: rgb(226, 224, 224);
+
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
 }
 .login-container{
-    width: 500px;
+    width: 400px;
     /* height: 300px; */
     border:none;
     box-shadow: 5px 5px 10px 10px #dfdddd;
@@ -28,6 +30,7 @@
     display: inline-block;
     width: 100%;
     font-family: 'Times New Roman', Times, serif;
+    color: white;
 }
 
 .user-name-input, .password-input{

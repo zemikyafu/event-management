@@ -5,27 +5,29 @@
     align-items: center;
     justify-content: center;
     position: relative;
-      background-color: rgb(255, 255, 255);
+    background-color: rgb(226, 224, 224);
 
 
    
 
 }
 .form-container{
-    width: 500px;
+    width: 330px;
     /* height: 300px; */
     border:none;
     box-shadow: 5px 5px 10px 10px #dfdddd;
     background-color: rgb(234, 235, 230);
 }
+
 .form-title {
     display: inline-block;
     width: 100%;
     background-color: rgb(192, 128, 10) ;
 }
 .form-title h1{
-    font-size: 20px;
+    /* font-size: 20px; */
     font-family: 'Times New Roman', Times, serif;
+    color:white
 }
 
 .form-field{
@@ -36,26 +38,47 @@
     
 }
     
-.form-field .input-field-email, .input-field-password,.input-field-confirm-password{ 
+.input-field-email, .input-field-password,.input-field-confirm-password{ 
     
 padding: 10px 15px;
-width: 80%;
+width: 93%;
 margin-top: 20px;
 margin-bottom: 20px;
 border-radius: 5px;
 border: none;
+text-align: left;
 }
-
-.form-field .input-field-firstname, .input-field-lastname{ 
+.form-field-name{
+    width:100%;
+ 
+    display: flex;
+    justify-content:space-evenly;
+}
+.input-field-firstname, .input-field-lastname{ 
     
     padding: 10px 15px;
-    width: 40%;
+    width: 45%;
     margin-top: 20px;
+    
     margin-bottom: 20px;
+   
     border-radius: 5px;
     border: none;
     }
 
+    .form-field-phonenumber .react-tel-input  {
+        /* display: flex; */
+        margin-left: 10px;
+       
+    }
+    /* .react-tel-input .form-control{
+        width: 100%;
+    } */
+    .react-tel-input .flag-dropdown {
+ text-align: left;
+}
+  
+    
 .form-button{
     width: 100%;
     display: flex;
@@ -68,6 +91,7 @@ border: none;
     width: 30%;
     padding: 10px 15px;
     margin-bottom: 20px;
+    color: white;
 }
 .form-button .cancel-button{
     background-color: rgb(136, 136, 136);
@@ -76,4 +100,54 @@ border: none;
     width: 30%;
     padding: 10px 15px;
     margin-bottom: 20px;
+    color: white;
 }
+
+
+
+
+/* nnnnnnnnnnnnnnnnnnnnnnnn */
+
+/* .registration-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .registration-container h2 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group .react-tel-input .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+   */

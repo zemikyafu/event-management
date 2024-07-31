@@ -6,11 +6,11 @@ function Navbar()
         
         <ul className="nav-bar-list">
             <li className='nav-bar-list-item'>
-           <a className="active" href="#">Home </a>  
+           <a className="active" href="/">Home </a>  
             </li>
             
             <li className='nav-bar-list-item'>
-            <a   href="#">Events </a>  
+            <a   href="/events">Events </a>  
             </li>
             <li className='nav-bar-list-item'>
             <a  href="#"> Profile</a>   
