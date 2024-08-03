@@ -8,6 +8,8 @@
 /frontend/.pnp
 .pnp.js
 
+/backend/config
+
 # testing
 /frontend/coverage
 /backend//coverage

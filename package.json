@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "event-management": "file:",
     "react-router-dom": "^6.25.1"
   }
 }
