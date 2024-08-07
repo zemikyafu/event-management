@@ -1,7 +1,7 @@
 const express=require('express');
 const app=express();
 const cors =require('cors');
-const authController= require('../controller/authController');
+const authController= require('./controller/authController');
 const corsOptions = {
   origin: '*',
 };
@@ -27,14 +27,3 @@ app.listen(port,()=>{
     console.log("Start listening on Port "+port);
 })
 
-// const express = require('express');
-// const app = express();
-// const port = 8080;
-
-// app.get('/', (req, res) => {
-//   res.send('Hello World!');
-// });
-
-// app.listen(port, () => {
-//   console.log(`Server listening on port ${port}`);
-// });

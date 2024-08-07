@@ -78,6 +78,11 @@ border: none;
     margin-bottom: 20px;
     color:  white;
     
+    
+}
+.submit-button:hover{
+ cursor:pointer;
+ background-color: rgba(192, 128, 10, 0.7) ;
 }
 .signup-container{
     display: flex;
@@ -85,4 +90,19 @@ border: none;
      margin-left: 50px;
     margin-bottom: 20px;
     text-align: left;
+}
+
+.error-message{
+    color: #D8000C;
+    background-color: #FFBABA;
+    /* background-image: url('https://i.imgur.com/GnyDvKN.png'); */
+    /* background-repeat:no-repeat */
+
+}
+.success-message{
+   
+        color: #4F8A10;
+        background-color: #DFF2BF;
+        /* background-image: url('https://i.imgur.com/Q9BGTuy.png'); */
+        /* background-repeat:no-repeat */
 }
