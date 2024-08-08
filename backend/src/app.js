@@ -15,14 +15,15 @@ app.post('/api/users',authController.registerUser);
 app.post('/api/login',authController.login);
 app.get('/api/users',authController.getUsers);
 app.get('/api/users/:id',authController.getUserById);
-app.patch('/api/users/:id',authController.updateUser);
-
+ app.patch('/api/users/:id',authController.updateUser);
+app.patch('/api/users/role/:id',authController.updateUserRole);
 
 app.post('/api/events',eventController.registerEvent);
 app.get('/api/events',eventController.getAllEvents);
 app.get('/api/events/:user_id',eventController.getEventByUserId);
 app.put('/api/events/:id',eventController.updateEvent);
 app.delete('/api/events/:id',eventController.deleteEvent);
+
 
 
 

@@ -34,7 +34,6 @@ const registerUser = async (request, response) => {
   try {
     pool.query(
       "Insert into users(first_name,last_name,username,email,password,phone_number)  values( $1,$2,$3,$4,$5,$6) returning id,email,role",
-    //  "Insert into users  values( $1,$2,$3,$4,$5,$6)",
       [
         user.first_name,
         user.last_name,
@@ -45,8 +44,8 @@ const registerUser = async (request, response) => {
       ],
       (error, result) => {
         if (error) {
-          console.log(error.message)
-         // throw new Error("Error while excuting insert into user query");
+       
+          throw new Error(error);
         }
        else if(result)
         {
@@ -62,7 +61,7 @@ const registerUser = async (request, response) => {
       }
     );
   } catch (error) {
-    console.log(error.message);
+    console.error('Error while registering user:', error.message, error.stack);
     response.status(500).send({ 'Error': 'Internal server error' });
   }
 };
@@ -114,7 +113,7 @@ const getUsers = (request, response) => {
       "select id,first_name,last_name,username,email,phone_number,role from users",
       (error, result) => {
         if(error)
-           console.log('error',error.message);
+           console.log('error',error.message,);
         if (!result) {
           response.status(404).send({ 'error': "result not found" });
         } else {
@@ -123,7 +122,6 @@ const getUsers = (request, response) => {
       }
     );
   } catch (error) {
-    console.error(error);
     response.status(500).json({ 'error': 'Internal server error' });
   }
 };
@@ -152,43 +150,51 @@ const getUserById = (request, response) => {
 };
 
 const updateUser = async (request, response) => {
-  try {
-    const id = parseInt(request.params.id);
-   console.log('update started',id);
-    //check user exist
-    const user = await pool.query("select *from users where id=$1", [id]);
-    if (user.rows.length === 0)
-        return response
-        .status(400)
-        .json({ 'responseMessage': "User doesn't exist" });
+  const id = parseInt(request.params.id);
+  const user=request.body;
+  console.log('id',id)
 
-    pool.query(
-      "update  users set first_name=$1,last_name=$2,username=$3,email=$4,phone_number=$5,role=$6 where id=$7  returning id, first_name,last_name,username,email,phone_number,role",
-      [
-        user.rows[0].first_name,
-        user.rows[0].last_name,
-        user.rows[0].username,
-        user.rows[0].email,
-        user.rows[0].phone_number,
-        user.rows[0].role,
-        user.rows[0].id
-      ],
-      (error, result) => {
-        if (error) throw new Error(error);
-        else {
-          return response
-            .status(200)
-            .send({ 'Updated user':result.rows[0]});
-        }
-      }
-    );
+  if(!id || !user.first_name|| !user.last_name || !user.username || !user.email || !user.phone_number )
+    return  response.status(400).send({ 'Error': 'Missing required fields or user_id' });
+
+  try {
+    const result= await pool.query( "update  users set first_name=$1,last_name=$2,username=$3,email=$4,phone_number=$5 where id=$6  returning *",
+           [user.first_name,user.last_name,user.username,user.email,user.phone_number,id]);
+    if (result.rows && result.rows.length > 0) {
+      return response.status(200).send({ 'User  updated': result.rows[0] });
+  } else {
+      return response.status(404).send({ 'Error': 'User not found' });
+  }
+    
   } catch (error) {
-    return response.status(404).send({ 'error': 'internal server error' });
+    
   }
 };
+
+const updateUserRole= async (request,response)=>{
+  const id= request.params.id;
+  const user_role= request.body.role;
+
+  if(!id || !user_role)
+    return  response.status(400).send({ 'Error': 'Missing required fields or user_id' });
+  try {
+    const result= await pool.query("update users set role= $1 where id = $2 returning id,first_name,last_name,username role ",[user_role,id]);
+    if (result.rows && result.rows.length > 0) {
+      return response.status(200).send({ 'user role updated': result.rows[0] });
+  } else {
+      return response.status(404).send({ 'Error': 'User not found' });
+  }
+    
+  } catch (error) {
+    
+  }
+}
+
+
 
 module.exports.registerUser = registerUser;
 module.exports.login = login;
 module.exports.getUsers = getUsers;
 module.exports.getUserById = getUserById;
 module.exports.updateUser = updateUser;
+module.exports.updateUserRole=updateUserRole;
