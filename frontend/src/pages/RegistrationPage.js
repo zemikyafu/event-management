@@ -36,7 +36,7 @@ function RegistrationPage(prob) {
       
          if (response.status === 201) {
         
-            prob.registrationMessage({ messageType: 'success-message', message: 'Successfully registered! Please use your credentials to log in.' });
+            prob.registrationMessage({ messageType: 'success-message', message: 'Successfully registered! Please use your credentials to login.' });
             navigate('/');
          }
       
