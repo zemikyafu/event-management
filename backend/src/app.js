@@ -2,6 +2,7 @@ const express=require('express');
 const app=express();
 const cors =require('cors');
 const authController= require('./controller/authController');
+const eventController =require('./controller/eventController');
 const corsOptions = {
   origin: '*',
 };
@@ -16,10 +17,15 @@ app.get('/api/users',authController.getUsers);
 app.get('/api/users/:id',authController.getUserById);
 app.patch('/api/users/:id',authController.updateUser);
 
-app.get('/', (req, res) => {
-  console.log('url',req.url)
-    res.send('Hello World!');
-  });
+
+app.post('/api/events',eventController.registerEvent);
+app.get('/api/events',eventController.getAllEvents);
+app.get('/api/events/:user_id',eventController.getEventByUserId);
+app.put('/api/events/:id',eventController.updateEvent);
+app.delete('/api/events/:id',eventController.deleteEvent);
+
+
+
 
 const port = process.env.Event_PORT|| 8080;
 
