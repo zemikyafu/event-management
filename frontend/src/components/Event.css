@@ -1,0 +1,67 @@
+/* src/App.css */
+
+
+input {
+    margin: 10px;
+    padding: 5px;
+}
+
+button {
+    margin: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+table {
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.event-form{
+    width: 400px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    flex-direction: column;
+}
+.event-list{
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.update-event-button{
+    cursor: pointer;
+    background-color: rgba(10, 192, 40, 0.7) ;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+.register-event-button {
+    cursor: pointer;
+    background-color: rgb(192, 128, 10,0.7) ;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+.delete-event-button{
+    cursor: pointer;
+    background-color: rgba(192, 10, 10, 0.7) ;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    width: 75px;
+}
+.edit-event-button{
+    cursor: pointer;
+    background-color: rgba(10, 192, 40, 0.7) ;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    width: 75px;
+}

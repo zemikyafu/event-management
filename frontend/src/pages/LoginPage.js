@@ -1,6 +1,5 @@
 import "../pages/LoginPage.css";
 import { useEffect, useState } from "react";
-import { login } from "../api/userApi";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -26,13 +25,14 @@ function LoginPage(prob) {
     await axios
       .post("/login", credential)
       .then((response) => {
-        if (response.status === 200) {
-          const {token,user}= response.data;
-          console.log(response.data);
-        
+        if (response.status === 201) {
+         const {token,user}=response.data;
+         
           localStorage.setItem("token",token);
-          localStorage.setItem("user",user);
+          localStorage.setItem("user",JSON.stringify(user));
           prob.handleAuth(true);
+          console.log('user',localStorage.getItem('user'));
+          console.log('token',localStorage.getItem('token'));
           navigate("/home");
         }
       })
