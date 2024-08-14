@@ -1,16 +1,43 @@
 # Event managment
 
-This project containes react frontend and node js backend application. The project also uses postgress database and node-postgress(pg) ORM technology
+This project is a full-stack web application designed to manage events. It includes a React frontend, a Node.js backend, and utilizes a PostgreSQL database. The backend interacts with the database using the node-postgres (pg) library.
 
 ## Project overview
 
-This project involves creating a web application where users can create, view, and manage events. This includes user management( Signup, signin,and Profile managment
-), event creation,editing and event list views.
+The Event Management Application allows users to create, view, and manage events. Key features include:
+
+- User Management: Users can sign up, sign in, and manage their profiles.
+- Event Creation: Users can create events with details like title, description, venue, and date.
+- Event Editing: Users can edit existing events to update any details.
+- Event Listing: All created events are displayed in a list, which users can view and manage.
+
+## Technologies Used
+
+- Frontend: React
+- Backend: Node.js, Express
+- Database: PostgreSQL
+- ORM: Node-postgres (pg)
+
+## project setup
+
+```bash
+git clone https://github.com/zemikyafu/event-management.git
+cd event-management
+
+# For the frontend
+cd frontend
+npm install
+
+# For the backend
+cd backend
+npm install
+```
 
 ## Available Scripts
 
-In the project directory, you can run:
+Database scripts located in backend/db_scripts file.
+To run the project use the following command in the project directory:
 
-### `start:frontend`
+### `npm run start:frontend`
 
-### `start:backend`
+### `npm run start:backend`
