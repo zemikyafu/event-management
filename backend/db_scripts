@@ -1,0 +1,31 @@
+postgres=# create database event_management;
+postgres=# create database event_management;
+postgres-# create user db-user with password *****;
+postgres-# alter user db_user with created createrole login;
+postgres=# grant all privileges on database event_management to db_user ;
+
+postgres=#\c event_management;
+
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(20),
+    role VARCHAR(20) DEFAULT 'attendee',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE events (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    description TEXT,
+    venu VARCHAR(100),
+    date TIMESTAMP NOT NULL,
+    user_id INTEGER REFERENCES users(id)
+);
+
+
