@@ -21,9 +21,7 @@ function App() {
     }
   }, []);
 
-  useEffect(() => {
-    console.log('isAuthenticated:', isAuthenticated);
-  }, [isAuthenticated]);
+
 
   const handleAuth = (authState) => {
     setIsAuthenticated(authState);

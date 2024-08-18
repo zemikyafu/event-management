@@ -19,14 +19,14 @@ function EventsPage() {
   }
    
   return (
-    <div>
-      <Navbar></Navbar>
+    
+      
       <div>
+        <Navbar></Navbar>
          <EventForm onEventChanged={handelEvenchange} formState={formState} isEditing={isEditing}></EventForm>
          <EventList eventChanged={eventChanged} handleEdit={onHandleEdit}></EventList>
       </div>
-     
-    </div>
+   
   );
  
 

@@ -25,7 +25,7 @@ function LoginPage(prob) {
     await axios
       .post("/login", credential)
       .then((response) => {
-        if (response.status === 201) {
+        if (response.status === 200) {
          const {token,user}=response.data;
          
           localStorage.setItem("token",token);
