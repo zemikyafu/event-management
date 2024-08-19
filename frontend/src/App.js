@@ -2,6 +2,7 @@ import './App.css';
 import LoginPage from './pages/LoginPage';
 import HomePage from './pages/HomePage';
 import RegistrationPage from './pages/RegistrationPage';
+import ProfilePage  from './pages/ProfilePage';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import EventsPage from './pages/EventsPage';
 import React from 'react';
@@ -42,8 +43,9 @@ function App() {
           <Route path="/" element={<LoginPage handleAuth={handleAuth} message={message} />} />
           <Route path="/home" element={<PrivateRoute element={HomePage} />} />
           <Route path="/registration" element={<RegistrationPage registrationMessage={handleMessage} />} />
-          {/* <Route path="/events" element={<PrivateRoute element={EventsPage} />} /> */}
-          <Route path="/events" element={<EventsPage />} />
+          <Route path="/events" element={<PrivateRoute element={EventsPage} />} />
+          <Route path="/profile" element={<PrivateRoute element={ProfilePage} />} />
+          {/* <Route path="/events" element={<EventsPage />} /> */}
         </Routes>
       </BrowserRouter>
     </div>

@@ -11,6 +11,7 @@ function Navbar() {
     setActiveMenu(menuName);
   };
   const navigate  = useNavigate()
+
   useEffect(()=>{
     const user=JSON.parse(localStorage.getItem('user'));
     console.log('loggedin as',user);
@@ -19,10 +20,15 @@ function Navbar() {
       setLoggedInUser(user.name);
     }
   },[])
+  
 const handleLogout=()=>{
   localStorage.removeItem("user");
   localStorage.removeItem("token");
   navigate('/')
+}
+
+const handleProfile=()=>{
+  navigate('/profile')
 }
   return (
     <ul className="nav-bar-list">
@@ -62,7 +68,7 @@ const handleLogout=()=>{
            <a onClick={handleLogout} > <FontAwesomeIcon icon={faSignOutAlt} />Logout</a>
           </li>
           <li>
-         <a href="/manage-profile"> <FontAwesomeIcon icon={faCog} /> Manage Profile</a>
+         <a onClick={handleProfile}> <FontAwesomeIcon icon={faCog} /> Manage Profile</a>
           </li>
         </ul>
       </li>

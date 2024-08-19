@@ -1,0 +1,114 @@
+.profile-page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    position: relative;
+ 
+}
+.form-container{
+    margin-top: 40px;
+   
+    width: 330px;
+    height: 600px;
+    border:none;
+    box-shadow: 5px 5px 10px 10px #dfdddd;
+    /* background-color: rgb(234, 235, 230); */
+}
+
+.form-title {
+    display: inline-block;
+    width: 100%;
+    background-color: rgb(192, 128, 10) ;
+}
+.form-title h1{
+    /* font-size: 20px; */
+    font-family: 'Times New Roman', Times, serif;
+    color:white
+}
+
+.form-field{
+    width:100%;
+ 
+    display: flex;
+    justify-content: center;
+    
+}
+    
+.input-field-email, .input-field-username, .input-field-password,.input-field-confirm-password{ 
+    
+padding: 10px 15px;
+width: 93%;
+margin-top: 20px;
+margin-bottom: 20px;
+border-radius: 5px;
+border: none;
+text-align: left;
+}
+.form-field-name{
+    width:100%;
+ 
+    display: flex;
+    justify-content:space-evenly;
+}
+.input-field-firstname, .input-field-lastname{ 
+    
+    padding: 10px 15px;
+    width: 45%;
+    margin-top: 20px;
+    
+    margin-bottom: 20px;
+   
+    border-radius: 5px;
+    border: none;
+    }
+
+    .form-field-phonenumber .react-tel-input  {
+        /* display: flex; */
+        margin-left: 10px;
+       
+    }
+    /* .react-tel-input .form-control{
+        width: 100%;
+    } */
+    .react-tel-input .flag-dropdown {
+ text-align: left;
+}
+  
+    
+.form-button{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.form-button .register-button{
+    background-color: rgb(192, 128, 10) ;
+    border-radius: 15px;
+    border: none;
+    width: 30%;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    color: white;
+}
+.form-button .cancel-button{
+    background-color: rgb(136, 136, 136);
+    border-radius: 15px;
+    border: none;
+    width: 30%;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.register-button:hover{
+  cursor: pointer;
+  background-color: rgb(192, 128, 10,0.7) ;
+}
+
+.cancel-button{
+  cursor: pointer;
+  background-color: rgb(136, 136, 136,0.7);
+}
+
+
